@@ -1,0 +1,8 @@
+fr:
+    time:
+        formats:
+            long: "%d/%m/%Y"        
+    devise:
+     sessions:
+         admin_user:
+             signed_in: "Bienvenu patron!"

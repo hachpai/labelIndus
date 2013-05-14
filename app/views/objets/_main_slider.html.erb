@@ -1,0 +1,12 @@
+
+<div id="slider-main-wrapper" class="coda-slider-wrapper">
+<div id = "main-left" class="coda-nav-left"><a href="#" data-dir="prev" title="Slide left"></a></div>
+<div id = "main-right" class="coda-nav-right"><a href="#" data-dir="next" title="Slide right"></a></div>
+<div class="coda-slider" id="slider-main">	
+<% objets.each do |objet| %>
+  <div>
+   <%= image_tag objet.image.url(:big) %>
+  </div>
+<% end %>
+ </div>
+</div>

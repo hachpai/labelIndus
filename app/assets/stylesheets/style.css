@@ -1,0 +1,105 @@
+html{
+	font-family: Verdana, sans-serif;
+}
+body{
+	position:relative;
+	width:960px;
+	height:660px;
+	margin-top:0;
+	margin-bottom:0;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+#logo{
+	position:absolute;
+	top:57px;
+	left:52px;
+}
+
+A {text-decoration: none; color:black}  
+A:hover {text-decoration: none}
+A:visited{color:black}
+
+nav{
+	position:absolute;
+	top:214px;
+	left:42px;
+}
+nav .menu_separator{
+	float:left;
+	width:20px;
+}
+nav .menu{
+	float:left;
+	padding-right:20px;
+	
+}
+nav .menu ul{
+	list-style: none;
+	padding:0;
+	margin:0;
+}
+
+nav .menu ul a{
+	text-align:right;
+	font-size: 8px;
+}
+nav .menu ul li{
+	height:36px;
+	width:50px;
+
+}
+
+a.luminaires:hover{
+	color: rgb(224,248,131);
+}
+a.luminaires:hover li, a.luminaires li{
+	border-top: solid 2px rgb(224,248,131);
+}
+
+a.assises:hover{
+	color: rgb(115,96,90);
+}
+a.assises:hover li,a.assises li{
+	border-top: solid 2px rgb(115,96,90);
+}
+
+a.tables:hover{
+	color: rgb(191,163,152);
+}
+a.tables li, a.tables:hover li{
+	border-top: solid 2px rgb(191,163,152);
+}
+a.horloges:hover{
+	color: rgb(241,226,219);
+}
+a.horloges:hover li, a.horloges li{
+	border-top: solid 2px rgb(241,226,219);
+}
+a.autres:hover{
+	color: rgb(242,141,119);
+}
+a.autres li, a.autres:hover li{
+	border-top: solid 2px rgb(242,141,119);
+}
+a.uncoloured li{
+	border-top: solid 2px black;
+}
+
+a.tout li{
+	padding-bottom:114px;
+}
+a.tout:hover, a.events:hover, a.contact:hover{
+	color: rgb(0,163,219);
+}
+
+a.tout li, a.events li, a.contact li, a.tout:hover li, a.events:hover li, a.contact:hover li{
+	text-align: left;
+	border-top: solid 2px rgb(0,163,219);
+}
+
+a.uncoloured li{
+	border-top: solid 2px black;
+}

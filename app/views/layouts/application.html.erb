@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>LabelIndus</title>
+  <title>Label Industriel</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-   <% if flash[:message] %>
-      <p class="error"><%= flash[:message] %></p>
+<header>
+	<%=link_to '/' do %>
+	<div id="logo">
+	<%=image_tag 'logo100.png'%>
+	</div>
+	<%end%>
+</header>
+<nav>
+
+<%= content_tag :div, :class => "menu" do -%>
+<ul>
+<%=menu_objets_link "luminaires"%>
+<%= menu_objets_link "assises"%>
+<%=menu_objets_link "tables"%>
+<%=menu_objets_link "horloges"%>
+<%=menu_objets_link "autres"%>
+</ul>
+<% end -%>
+<%= content_tag :div, :class => "menu" do -%>
+<ul>
+<%=	link_to raw("<li>TOUT</li>"), '/tout', :class => color_class('tout') %>
+<%= link_to raw('<li>événements</li>'), '/events', :class => color_class("events") %>
+<%= link_to raw('<li>contact</li>'), '/contact', :class => color_class("contact") %>
+</ul>
+<% end -%>
+
+</div>
+</nav>
 <%= yield %>
 
 </body>
 </html>
+
