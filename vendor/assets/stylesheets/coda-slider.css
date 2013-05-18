@@ -12,12 +12,13 @@ If you want to learn more, check out this article by Chris Coyier
 css-tricks.com/musings-on-preprocessing/
 
 ********************************************/
-#main-left{
+#main-left, #grid-arrow-left{
 	position:absolute;
 	top:275px;
 	left:240px;
 }
-#main-left a{
+
+#main-left a, #grid-arrow-left a{
 	width:60px;
 	height:80px;
 	padding:0;
@@ -25,19 +26,20 @@ css-tricks.com/musings-on-preprocessing/
 	background-image: url('flecheG.png');
 }
 
-#main-right{
+#main-right, #grid-arrow-right{
 	position:absolute;
 	top:275px;
 	right:240px;	
 }
-#main-right a{
+#main-right a, #grid-arrow-right a{
 	width:60px;
 	height:80px;
 	padding:0;
 	background-color: transparent;
 	background-image: url('flecheD.png');
 }
-#main-left a:hover, #main-right a:hover{
+
+#grid-arrow-right a:hover,#grid-arrow-left a:hover, #main-left a:hover, #main-right a:hover{
 	width:60px;
 	height:80px;
 	padding:0;
@@ -48,6 +50,20 @@ css-tricks.com/musings-on-preprocessing/
 #right-arrow-left,#left-arrow-left, #right-arrow-right, #left-arrow-right{
 	display:none;
 }
+#thumbNav a{
+	position:absolute;
+	top:260px;
+	right:112px;
+	width:74px;
+	height:110px;
+	background-color: transparent;
+	background-image: url('apercuInter.png');	
+}
+#thumbNav a:hover{
+	background-color: transparent;
+	background-position:0 -110px;
+}
+
 .coda-slider-wrapper .coda-slider {
 	/******************************************************
 	* 
@@ -89,7 +105,7 @@ css-tricks.com/musings-on-preprocessing/
 	z-index: 3;
 	
 }
-#slider-main .panel {
+#slider-grid .panel, #slider-main .panel {
 	/******************************************************
 	* 
 	* Width of each individual panel. 
@@ -98,8 +114,29 @@ css-tricks.com/musings-on-preprocessing/
 	*
 	*******************************************************/
 	width: 360px; 
-	height:540px;
+	height:541px;
 }
+#slider-main .panel-container .panel .panel-wrapper {
+	/******************************************************
+	* 
+	* Width of each individual panel. 
+	* Typically you will want to match this with the width 
+	* of the container as well. 
+	*
+	*******************************************************/
+	line-height:541px;
+}
+#slider-main .panel-container .panel .panel-wrapper img{
+	/******************************************************
+	* 
+	* Width of each individual panel. 
+	* Typically you will want to match this with the width 
+	* of the container as well. 
+	*
+	*******************************************************/
+vertical-align:bottom; 
+}
+
 #slider-main-wrapper{
 
 	padding:0;
@@ -126,8 +163,33 @@ css-tricks.com/musings-on-preprocessing/
 	width: 94px;
 	padding-left: 270px;
 	z-index: 1;
-	
 }
+
+#degradG {
+	position:absolute;
+	left:0px;
+	top:469px;
+	width: 133px;
+	height: 118px;
+	z-index: 3;
+	background-image: url('degradeG.png');	
+}
+
+#degradD {
+	position:absolute;
+	top:469px;
+	right:0px;
+	width: 133px;
+	height: 118px;
+	z-index: 3;
+	background-image: url('degradeD.png');	
+}
+
+a#degradD:hover, a#degradG:hover{
+	color: transparent;
+	background-color: transparent;
+}
+
 #slider-left .panel {
 	/******************************************************
 	* 
@@ -137,7 +199,7 @@ css-tricks.com/musings-on-preprocessing/
 	*
 	*******************************************************/
 	width: 94px; 
-	height:110px;
+	height:117px;
 }
 #slider-left .panel .panel-wrapper {
 	padding-left: 20px;
@@ -158,11 +220,10 @@ css-tricks.com/musings-on-preprocessing/
 	*******************************************************/
 	position:absolute;
 	top:469px;
-	right:20px;
+	right:18px;
 	width:94px;
-	padding-right:280px;
+	padding-right:282px;
 	z-index: 1;
-	
 }
 #slider-right .panel {
 	/******************************************************
@@ -173,12 +234,47 @@ css-tricks.com/musings-on-preprocessing/
 	*
 	*******************************************************/
 	width: 94px; 
-	height:110px;
+	height:117px;
 }
 
 #slider-right .panel .panel-wrapper {
 	padding-left: 20px;
 
+}
+
+#slider-right .panel .panel-wrapper img, #slider-left .panel .panel-wrapper img{
+	border:0;
+	border-top: 6px;
+	border-style:solid;
+}
+
+#slider-grid{
+	/******************************************************
+	* 
+	* Inner wrapper styles 
+	*
+	*******************************************************/
+	/**background: #f2f2f2;*/
+	/******************************************************
+	* 
+	* Width of the container. Typically you will want to 
+	* match this with the width of the panel as well. 
+	*
+	*******************************************************/
+	position:absolute;
+	top:45px;
+	left:305px;
+	width: 351px;
+	z-index: 3;
+	
+}
+#slider-grid img{
+	margin-left:5px;
+	margin-right:5px;
+	margin-bottom:19px;
+	border:0;
+	border-top: 6px;
+	border-style:solid;
 }
 
 .coda-slider-wrapper .coda-slider .panel .panel-wrapper {
@@ -188,6 +284,15 @@ css-tricks.com/musings-on-preprocessing/
 	*
 	*******************************************************/
 	padding: 0px; 
+
+}
+.coda-slider-wrapper .coda-slider .panel .panel-wrapper img{
+	/******************************************************
+	* 
+	* Panel wrapper styles 
+	*
+	*******************************************************/
+	vertical-align:bottom; /*for image in the bottom*/
 }
 
 .coda-slider-wrapper .coda-nav {

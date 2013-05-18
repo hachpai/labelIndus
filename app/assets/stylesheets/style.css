@@ -19,13 +19,13 @@ body{
 }
 
 A {text-decoration: none; color:black}  
-A:hover {text-decoration: none}
+A:hover {text-decoration: none;background-color:transparent;}
 A:visited{color:black}
 
 nav{
 	position:absolute;
 	top:214px;
-	left:42px;
+	left:18px;
 }
 nav .menu_separator{
 	float:left;
@@ -44,11 +44,11 @@ nav .menu ul{
 
 nav .menu ul a{
 	text-align:right;
-	font-size: 8px;
+	font-size: 11px;
 }
 nav .menu ul li{
 	height:36px;
-	width:50px;
+	width:74px;
 
 }
 
@@ -102,4 +102,17 @@ a.tout li, a.events li, a.contact li, a.tout:hover li, a.events:hover li, a.cont
 
 a.uncoloured li{
 	border-top: solid 2px black;
+}
+
+footer{
+	position:absolute;
+	height:30px;
+	width:960px;
+	top:630px;
+	color:white;
+	background-color:black;
+}
+footer p{
+	line-height:8px;
+	font-size:10px;
 }

@@ -1,0 +1,17 @@
+<div id="slider-grid-wrapper" class="coda-slider-wrapper">
+	<div id="grid-arrow-left" class="coda-nav-left"><a href="#" data-dir="prev" title="Slide left"></a></div>
+	<div id="grid-arrow-right" class="coda-nav-right"><a href="#" data-dir="next" title="Slide right"></a></div>
+	<div class="coda-slider" id="slider-grid" data-maxindex ="<%=(@objets.size/16.to_f).ceil%>">
+		<% @objets.each_slice(16).with_index do |objets,indexGrid| %>
+			<div>
+			<%objets.each_with_index do |objet,index|%>
+			<%indexLink = (indexGrid*16)+index +1%>
+			<a href="#<%=indexLink%>" class="nav-link" data-position="<%=index+1%>" data-ref="slider-main slider-left slider-right">
+				<%= image_tag objet.image.url(:thumbnail), :style => "border-color: #{thumbnailColorCode(objet.categorie)}" %>
+			</a>
+			<% end %>
+			</div>
+		<% end %>
+		</div>
+	</div>
+</div>

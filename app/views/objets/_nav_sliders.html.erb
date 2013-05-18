@@ -1,14 +1,14 @@
 <div id="slider-<%=position%>-wrapper" class="coda-slider-wrapper">
 <div id="<%=position%>-arrow-left" class="coda-nav-left"><a href="#" data-dir="prev" title="Slide left"></a></div>
 <div id="<%=position%>-arrow-right" class="coda-nav-right"><a href="#" data-dir="next" title="Slide right"></a></div>
-<div class="coda-slider" id="slider-<%=position%>" >
+<div class="coda-slider" id="slider-<%=position%>">
 <% @objets.each_with_index do |objet,index| %>
   <div>
-	<a href="#<%=index+1%>" data-ref="slider-main">	
-    <%= image_tag objet.image.url(:thumbnail) %>
-</a>
+	<a href="#<%=index+1%>" class="nav-link" data-position="<%=index+1%>" data-ref="slider-main slider-left slider-right">
+    <%= image_tag objet.image.url(:thumbnail), :style => "border-color: #{thumbnailColorCode(objet.categorie)}" %>
+	</a>
   </div>
 <% end %>
 </div>
- </div>
+ 
 </div>

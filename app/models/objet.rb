@@ -19,6 +19,7 @@ class Objet < ActiveRecord::Base
 
   def cropping?
      !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
+     
   end
   
   def crop_image
