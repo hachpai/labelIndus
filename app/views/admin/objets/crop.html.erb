@@ -15,7 +15,8 @@ function update_crop(coords) {
 	    onChange: update_crop,
 	    onSelect: update_crop,
 	    setSelect: [0, 0, 500, 500],
-	    aspectRatio: 0.666666666
+		<%= @objet.categorie == Objet.categories["accueil"] ? "aspectRatio: 1.1" : "aspectRatio: 0.666666666" %>
+
 });
   }));
 </script>

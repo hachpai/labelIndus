@@ -1,10 +1,11 @@
-<div id = "view">
+
+<%= content_tag :div, :id => "view" do -%>
 <%= render :partial => "main_slider", :locals => { :objets => @objets } %>
 <%= render :partial => "nav_sliders", :locals => { :objets => @objets, :position => "left" } %>
 <%= render :partial => "nav_sliders", :locals => { :objets => @objets, :position => "right" } %>
-</div>
-<div id = "grid" style="display:none">
+<% end -%>
+<%= content_tag :div, :id => "grid", :style => "display:none" do -%>
 <%= render :partial => "grid", :locals => { :objets => @objets}%>
-</div>
-<div id="thumbNav"><a href="#0" data-transition="grid" data-ref="slider-main slider-left slider-right"></a></div>
+<% end -%>
+<div id="thumbNav"><a href="#0" data-transition="grid" class="grid" data-ref="slider-main slider-left slider-right"></a></div>
 

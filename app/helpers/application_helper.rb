@@ -1,9 +1,9 @@
 module ApplicationHelper
   def color_class(page_name)
     if ["events", "contact"].include?(page_name)
-      (params[:categorie] != page_name) ? "uncoloured "+page_name : page_name
+      (params[:categorie] != page_name) ? "transition uncoloured "+page_name : "transition "+page_name
     else
-      (params[:categorie] != page_name && params[:categorie] != "all") ? "uncoloured "+page_name : page_name 
+      (params[:categorie] != page_name && params[:categorie] != "all") ?  "transition uncoloured "+page_name : "transition "+page_name
     end
   end
 

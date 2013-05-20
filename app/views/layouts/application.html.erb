@@ -8,12 +8,11 @@
 <link rel="icon" type="image/png" href="assets/favicon.png" />
 </head>
 <body>
+<div id="loading"></div>
 <header>
-	<%=link_to '/' do %>
 	<div id="logo">
-	<%=image_tag 'logo100.png'%>
+	<%=link_to "",'/'%>
 	</div>
-	<%end%>
 </header>
 <nav>
 
@@ -30,16 +29,23 @@
 <ul>
 <%=	link_to raw("<li>TOUT</li>"), '/tout', :class => color_class('tout') %>
 <%= link_to raw('<li>événements</li>'), '/events', :class => color_class("events") %>
-<%= link_to raw('<li>contact</li>'), '/contact', :class => color_class("contact") %>
+<%= link_to raw('<li>contact</li>'), new_contact_form_path, :class => color_class("contact") %>
 </ul>
 <% end -%>
 
-</div>
 </nav>
+<%= content_tag :div, :id => "content" do -%>
 <%= yield %>
+<% end -%>
 
 <footer>
-	<p>LABEL INDUSTRIEL   •   Rue de l’Épinette, 7   7604 Baugnies   BELGIQUE   •   0032 492 04 36 52   •   jef-caro@hotmail.com</p>
+	<p>LABEL INDUSTRIEL<span class="footseparator">•</span>Rue de l’Épinette, 7   7604 Baugnies   BELGIQUE<span class="footseparator">•</span>0032 492 04 36 52<span class="footseparator">•</span>jef-caro@hotmail.com
+	</p> 
+	<div class="social">
+	<%=link_to "",'http://www.facebook.com',:id =>"facebook"%>
+	<%=link_to "",'http://www.linkedin.com',:id =>"linkedIn"%>
+	</div>
+	<p id="griffe"> site créé par ZOMBIE SHARKS</p>
 </footer>
 </body>
 </html>

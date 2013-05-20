@@ -4,6 +4,8 @@
 //http://stackoverflow.com/questions/5577555/jquery-trigger-click-doesnt-work multiple event and link 
 //http://blog.baltrinic.com/software-development/synchronous-or-sequential-animation-in-jquery
 $().ready(function() {
+	$.pageLoader();
+	
 	$('#slider-main').codaSlider({
 		dynamicTabs : false,
 		dynamicArrows : false,
@@ -32,7 +34,16 @@ $().ready(function() {
 		hashLinking: true,
 		slideEaseFunction:"easeOutQuart"
 	});
-
+	$('#slider-accueil').codaSlider({
+		dynamicTabs : false,
+		dynamicArrows : false,
+		continuous : true,
+		autoSlide: true,
+        autoSliderDirection: 'right',
+ 		autoSlideStopWhenClicked: false,
+        autoSlideInterval: 3442,
+		slideEaseFunction:"easeOutQuart"
+	});
 	jQuery('#main-left > a').click( function (e) {
 		jQuery('#slider-right-wrapper').children(".coda-nav-left").click();
 		jQuery('#slider-left-wrapper').children(".coda-nav-left").click();
@@ -41,13 +52,24 @@ $().ready(function() {
 		jQuery('#slider-right-wrapper').children(".coda-nav-right").click();
 		jQuery('#slider-left-wrapper').children(".coda-nav-right").click();
 	});	
-	jQuery('#thumbNav > a').click(function (e){
+	jQuery('#thumbNav > a,.gridThumb').click(function (e){
 		viewTransition();
 	});
-
-	
 	hideAndShowNavInterface($('#slider-main'));
 	hideAndShowNavInterface($('#slider-grid'));
+/*page transition*/
+	//$("#content").css("display", "none");
+	//$("#content").fadeIn(1000);
+	$("a.transition").click(function(event){
+		event.preventDefault();
+		linkLocation = this.href;
+		$("#content").fadeOut(1000, redirectPage);      
+	});
+
+	function redirectPage() {
+		window.location = linkLocation;
+	}
+	
 });
 
 function firstOffSecondOn(elem1,elem2){
@@ -139,6 +161,8 @@ function hideAndShowNavInterface(slider){
 		if(hash==1 || hash=='')
 		{
 			arrow_left.css("display","none");
+			
+			
 			//arrow_left.fadeOut("slow");
 		}
 		if(hash ==lastIndex)
@@ -172,15 +196,115 @@ function viewTransition(){
 			$('#grid').fadeIn("slow");
 		});
 		jQuery('#thumbNav > a').data('transition',"view");
+		jQuery('#thumbNav > a').attr('class', 'view');
 		jQuery('#thumbNav > a').prop("href", "#1");
 	}
 	else
 	{
 		jQuery('#thumbNav > a').data('transition',"grid");
-		
+
 		$('#grid').fadeOut("slow", function() {
 			$('#view').fadeIn("slow");
 		});
+		jQuery('#thumbNav > a').attr('class', 'grid');
 
 	}
 }
+/**LOADER**/
+/**
+ *
+ * @author	Benoit Asselin <contact(at)ab-d(dot)fr>
+ * @version	javascript.js, 2012/12/31
+ *
+ */
+
+
+(function($) {
+	
+	$.pageLoader = function() {
+		// Selection des images en src="
+		var $elements = $('body').find('img[src]');
+		// Selection des images en background-image
+		$('body [style]').each(function() {
+			var src = $(this).css('background-image').replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
+			if(src && src != 'none') {
+				$elements = $elements.add($('<img src="' + src + '"/>'));
+			}
+		});
+			
+		var loading = $('#loading');
+		var elementsCharges = 0;
+		var dureeMs = 1000;
+		var totalSteps = 10; //number of frames
+		var hAnim = 140; //one frame heigh
+		function animateStep(now, fx) {			
+				if (now >= 100)
+				{
+					loading.css({'background-position': '0px -'+ ((totalSteps-1)*hAnim)+'px'});
+				}
+				else{
+					var newPosition = Math.floor(now/totalSteps)*hAnim;
+					//console.log('position:'+newPosition);
+					loading.css({'background-position': '0px -'+ newPosition+'px'});					
+				}
+		}
+		function chargementEnCours() {
+			var pourcentage = 0;
+			if($elements.length) {
+				pourcentage = parseInt((elementsCharges / $elements.length) * 100);
+			}
+			loading
+				.stop() // stop les anciennes animations
+				.animate({pourcentage:pourcentage}, {
+					duration: dureeMs,
+					step: animateStep
+				});
+		}
+		
+		function chargementTermine() {
+			var pourcentage = 100;
+			loading
+				.stop() // stop les anciennes animations
+				.animate({pourcentage:pourcentage}, {
+					duration: (dureeMs / 2),
+					step: animateStep
+				})
+				// Disparition du chargement et affichage de la page
+				.css({opacity: 1})
+				.animate({opacity: 0}, function() {
+					// La page est prete
+					loading.css({display:'none'});
+					$('#content')
+						.css({
+							opacity: 0,
+							visibility:'visible'
+						})
+						.animate({opacity:1});
+				});
+			
+		}
+		
+		// La page contient des elements permettant d'afficher une barre de progression
+		if($elements.length) {
+			chargementEnCours();
+			
+			$elements.load(function() {
+				$(this).off('load');
+				elementsCharges++;
+				chargementEnCours();
+			});
+		}
+		
+		$(window).load(function() {
+			// La page est integralement chargee
+			chargementTermine();
+		});
+		
+	};
+	
+	
+	
+})(jQuery);
+
+
+

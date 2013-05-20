@@ -53,15 +53,22 @@ css-tricks.com/musings-on-preprocessing/
 #thumbNav a{
 	position:absolute;
 	top:260px;
-	right:112px;
-	width:74px;
+	right:93px;
+	width:112px;
 	height:110px;
 	background-color: transparent;
-	background-image: url('apercuInter.png');	
+	background-image: url('switchmode.png');	
 }
 #thumbNav a:hover{
 	background-color: transparent;
 	background-position:0 -110px;
+}
+#thumbNav a.view{
+	background-position:0 -220px;
+}
+#thumbNav a.view:hover{
+	background-color: transparent;
+	background-position:0 -330px;
 }
 
 .coda-slider-wrapper .coda-slider {
@@ -276,6 +283,77 @@ a#degradD:hover, a#degradG:hover{
 	border-top: 6px;
 	border-style:solid;
 }
+
+
+#slider-grid .panel, #slider-main .panel {
+	/******************************************************
+	* 
+	* Width of each individual panel. 
+	* Typically you will want to match this with the width 
+	* of the container as well. 
+	*
+	*******************************************************/
+	width: 360px; 
+	height:541px;
+}
+/**ACCUEIL**/
+#slider-accueil{
+	/******************************************************
+	* 
+	* Inner wrapper styles 
+	*
+	*******************************************************/
+	/**background: #f2f2f2;*/
+	/******************************************************
+	* 
+	* Width of the container. Typically you will want to 
+	* match this with the width of the panel as well. 
+	*
+	*******************************************************/
+	position:absolute;
+	top:0px;
+	right:18px;
+	width: 642px;
+	z-index:1;
+}
+
+#slider-accueil .panel-container .panel .panel-wrapper {
+	/******************************************************
+	* 
+	* Width of each individual panel. 
+	* Typically you will want to match this with the width 
+	* of the container as well. 
+	*
+	*******************************************************/
+	line-height:585px;
+}
+#slider-accueil .panel-container .panel .panel-wrapper img{
+	/******************************************************
+	* 
+	* Width of each individual panel. 
+	* Typically you will want to match this with the width 
+	* of the container as well. 
+	*
+	*******************************************************/
+vertical-align:bottom; 
+}
+#slider-accueil .panel {
+	/******************************************************
+	* 
+	* Width of each individual panel. 
+	* Typically you will want to match this with the width 
+	* of the container as well. 
+	*
+	*******************************************************/
+	width:  642px; 
+	height: 585px;
+}
+
+
+
+
+
+
 
 .coda-slider-wrapper .coda-slider .panel .panel-wrapper {
 	/******************************************************

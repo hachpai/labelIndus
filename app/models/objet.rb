@@ -16,7 +16,6 @@ class Objet < ActiveRecord::Base
     @@categories
   end
 
-
   def cropping?
      !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
      

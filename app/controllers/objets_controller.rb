@@ -8,4 +8,8 @@ class ObjetsController < InheritedResources::Base
     @objets = Objet.all if @objets.empty? && params[:categorie] == "all"
 
   end
+  
+  def accueil
+     @objets = Objet.where(:categorie => Objet.categories["accueil"])
+  end
 end

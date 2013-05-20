@@ -1,0 +1,22 @@
+<div id = "contactForm">
+<%= form_for @contact_form do |f| %>
+<div class="field">
+	<%= f.label :name %></br>
+	<%= f.text_field :name, :required => true %><br /><br><br>
+</div>
+
+<div class="field">
+	message<br />
+	<%= f.text_area :message %><br /><br><br>
+</div>
+<div class="field">
+	<%= f.label :email %></br>
+	<%= f.email_field :email, :required => true %>
+	<br /><br><br>
+</div>
+<div class="field">
+	Submit: <%= f.submit "envoyer" %>
+</div>
+
+<% end %>
+</div>

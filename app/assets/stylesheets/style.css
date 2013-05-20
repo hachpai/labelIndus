@@ -12,16 +12,45 @@ body{
 	
 }
 
-#logo{
+#logo a{
 	position:absolute;
 	top:57px;
 	left:52px;
+	width:100px;
+	height:100px;
+	background-color: transparent;
+	background-image: url('logoInter.png');	
 }
+#logo a:hover{
+	background-color: transparent;
+	background-position:0 -100px;
+	}
 
 A {text-decoration: none; color:black}  
 A:hover {text-decoration: none;background-color:transparent;}
 A:visited{color:black}
 
+#texte_accueil{
+	position:absolute;
+	top:214px;
+	left:300px;
+	width: 321px;
+	height: 154px;
+	background-color:black;
+	background-color: rgba(0, 0, 0, 0.7);
+	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80BDBDBD,endColorstr=#80BDBDBD);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80BDBDBD,endColorstr=#80BDBDBD);
+	z-index:2;
+	font-size:10px;
+	color:white;
+}
+
+#contactForm{
+	position:absolute;
+	left:300px;
+	top:0px;
+}
+/**MENU**/
 nav{
 	position:absolute;
 	top:214px;
@@ -103,16 +132,61 @@ a.tout li, a.events li, a.contact li, a.tout:hover li, a.events:hover li, a.cont
 a.uncoloured li{
 	border-top: solid 2px black;
 }
+/**FOOTER**/
 
 footer{
 	position:absolute;
 	height:30px;
-	width:960px;
+	width:100%;
 	top:630px;
 	color:white;
 	background-color:black;
 }
 footer p{
+	float:left;
+	padding-left:18px;
 	line-height:8px;
 	font-size:10px;
+	margin-right:20px;
+}
+#griffe{
+	float:right;
+	margin-right:18px;
+}
+/**LOADER**/
+#loading {
+	position: absolute;
+	left: 400px;
+	top: 246px;
+	width: 146px;
+	height:140px;
+	background-image: url('loadAnimation.png');	
+}
+	
+#content{
+	visibility:hidden;
+}
+
+span.footseparator{
+	margin:15px;
+}
+
+div.social a{
+	float:left;
+	margin-top:5px;
+	margin-left:5px;
+	width:20px;
+	height:20px;
+	background-color: white;
+}
+div.social a:hover{
+	background-color: white;
+	background-position:0 -20px;
+
+}
+#linkedIn{
+	background-image: url('logoLinkedIn.png');	
+}
+#facebook{
+	background-image: url('logoFacebook.png');		
 }
