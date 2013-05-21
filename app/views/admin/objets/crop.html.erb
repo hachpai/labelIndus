@@ -1,8 +1,10 @@
 <% title "Photo crop" %>
 <% content_for (:head) do %>
-<%=stylesheet_link_tag "jquery.Jcrop" %>
+<%= stylesheet_link_tag    "application", :media => "all" %>
+<%= javascript_include_tag "application" %>
+<%#stylesheet_link_tag "jquery.Jcrop" %>
 
-<%= javascript_include_tag "jquery.Jcrop.min" %>
+<%# javascript_include_tag "jquery.Jcrop.min" %>
 <script type="text/javascript">
 function update_crop(coords) {
   var ratio = <%= @objet.image_geometry(:original).width %> / <%= @objet.image_geometry(:crop).width %>; 

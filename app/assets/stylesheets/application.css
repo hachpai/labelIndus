@@ -10,8 +10,8 @@
  *
  *= require_self
  *= require_tree .
- *= require jquery.Jcrop
  */
 /*
 *= require coda-slider.css
+*= require jquery.Jcrop.css
 */
