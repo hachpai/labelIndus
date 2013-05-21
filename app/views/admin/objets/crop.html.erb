@@ -4,7 +4,7 @@
 <%= javascript_include_tag "jquery.Jcrop.min" %>
 <script type="text/javascript">
 function update_crop(coords) {
-  var ratio = <%= @objet.image_geometry(:original).width %> / 300; 
+  var ratio = <%= 20/30 %>; 
   $('#crop_x').val(Math.floor(coords.x * ratio));
   $('#crop_y').val(Math.floor(coords.y * ratio));
   $('#crop_w').val(Math.floor(coords.w * ratio));
