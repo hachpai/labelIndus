@@ -13,6 +13,7 @@
 //advice:http://ridingwithrails.wordpress.com/2011/12/28/rails-3-1-installing-lightbox-jquery-plugin/
 //= require jquery-1.7.2.min
 //= require jquery_ujs
+//= require jcrop
 //= require graphism
 //= require jquery-ui-1.8.20.custom.min
 //= require jquery.coda-slider-3.0.min
