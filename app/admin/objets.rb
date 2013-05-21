@@ -19,7 +19,7 @@ ActiveAdmin.register Objet do
         if params[:objet][:image].blank?
           redirect_to admin_objet_path(@objet)
         else
-          redirect_to admin_objet_path(@objet)
+          render :action => 'crop', :layout => 'admin/layouts/crop_layout'
         end
       else
         render :action => 'new'
