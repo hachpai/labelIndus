@@ -8,6 +8,7 @@ LabelIndus::Application.configure do
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
+Paperclip::Attachment.default_options[:storage] = :s3
 Paperclip::Attachment.default_options[:url] = 's3_domain_url'
   # Code is not reloaded between requests
   config.cache_classes = true
