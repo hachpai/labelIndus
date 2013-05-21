@@ -26,7 +26,7 @@ function update_crop(coords) {
 
 <%= form_for @objet, :url => admin_objet_path(@objet) do |form| %>
   <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
-    <%= form.text_field attribute, :id => attribute %>
+    <%= form.text_field attribute, :id => attribute %> 
   <% end %>
   <p><%= form.submit "Crop" %></p>
 <% end %>
