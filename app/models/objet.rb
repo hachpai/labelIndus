@@ -25,9 +25,14 @@ class Objet < ActiveRecord::Base
   def crop_image
     image.reprocess!
   end
-  
+  def profile_picture_geometry(style = :original)
+      @geometry ||= {}
+      image_path = (image.options[:storage] == :s3) ?   image.url(style) : image.path(style)
+      @geometry[style] ||= Paperclip::Geometry.from_file(image_path)
+  end
   def image_geometry(style = :original)
     @geometry ||= {}
-    @geometry[style] ||= Paperclip::Geometry.from_file(image.path(style))
+    image_path = (image.options[:storage] == :s3) ?   image.url(style) : image.path(style)
+    @geometry[style] ||= Paperclip::Geometry.from_file(image_path)
   end
 end
