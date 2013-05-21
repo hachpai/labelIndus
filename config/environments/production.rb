@@ -2,12 +2,13 @@ LabelIndus::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
   config.paperclip_defaults = {
     :storage => :s3,
-    :url => :s3_domain_url,
     :s3_credentials => {
       :bucket => ENV['AWS_BUCKET'],
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
+    :path =&gt; ":class/:id/:basename_:style.:extension",
+    :url =&gt; ":s3_sg_url"
   }
 Paperclip::Attachment.default_options[:url] = 's3_domain_url'
   # Code is not reloaded between requests
