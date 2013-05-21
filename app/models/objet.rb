@@ -1,5 +1,6 @@
 #!/bin/env ruby
 # encoding: utf-8
+#http://everydayrails.com/2011/09/07/rails-contact-form.html
 class Objet < ActiveRecord::Base
 
   @@categories = {"luminaires" => 1, "assises" => 2, "tables" => 3, "horloges" => 4, "autres" => 5, "accueil" => 6}

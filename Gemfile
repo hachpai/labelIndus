@@ -15,6 +15,7 @@ end
 # in production environments by default.
 group :production do
   gem 'pg', '0.15.1'
+  gem 'aws-sdk'
 end
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
