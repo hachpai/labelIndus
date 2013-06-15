@@ -13,7 +13,7 @@ class ContactFormsController < ApplicationController
         render :new
       end
     rescue ScriptError
-      flash[:error] = 'Sorry, this message appears to be spam and was not delivered.'
+      flash[:notice] = 'Sorry, this message appears to be spam and was not delivered.'
     end
   end
 end

@@ -28,6 +28,25 @@ Paperclip::Attachment.default_options[:url] = 's3_domain_url'
 
   # Generate digests for assets URLs
   config.assets.digest = true
+  
+  config.action_mailer.default_url_options = { :host => 'labelindustriel.be' }
+  # ActionMailer Config
+  # Setup for production - deliveries, no errors raised
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
+    address: "send.one.com",
+    port: 587,
+    domain: "labelindustriel.be",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    #user_name: ENV["GMAIL_USERNAME"],
+    #password: ENV["GMAIL_PASSWORD"]
+    user_name: "jef@labelindustriel.be",
+    password: "colin007"
+  }
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH

@@ -1,11 +1,13 @@
 LabelIndus::Application.routes.draw do
 
   root :to => 'objets#accueil' , :categorie => 'accueil'
+  match '/contact_forms' => 'ContactForms#create'
   match '/admin' => redirect("/admin/objets")
   match '/:categorie' => 'objets#index'
 
   resources :objets
   resources :contact_forms
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 

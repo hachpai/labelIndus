@@ -1,5 +1,4 @@
 class ContactForm < MailForm::Base
-  attribute :name,      :validate => true
   attribute :email,     :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   attribute :file,      :attachment => true
 
@@ -11,8 +10,8 @@ class ContactForm < MailForm::Base
   def headers
     {
       :subject => "Contact via site",
-      :to => "jef@labelindustriel.com",
-      :from => %("#{name}" <#{email}>)
+      :to => "labelindustriel@outlook.be",
+      :from => "jef@labelindustriel.be"
     }
   end
 end
