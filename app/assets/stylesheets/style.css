@@ -49,6 +49,8 @@ A:visited{color:black}
 	padding : 5px;
 }
 
+/**contact form**/
+
 #contactForm{
 	position:absolute;
 	left:300px;
@@ -58,15 +60,25 @@ A:visited{color:black}
 	width:360px;
 	height:536px;
 }
+
+textarea {
+	height:266px;
+	width:296px;
+    resize: none;
+}
+
 #contactForm .field_margined{
 	margin-left:30px;
 }
 
 input#send-button{
+	position:absolute;
+	bottom:0;
     background: #ccc url('envoiInter.png') no-repeat top left;
 	width:360px;
 	height:110px;
 	border:0;
+	
 }
 input#send-button:hover{
 	background-position: 0 -110px;
@@ -148,6 +160,9 @@ a.tout:hover, a.events:hover, a.contact:hover{
 a.tout li, a.events li, a.contact li, a.tout:hover li, a.events:hover li, a.contact:hover li{
 	text-align: left;
 	border-top: solid 2px rgb(0,163,219);
+}
+a.events{ /*if we need to add events support*/
+	visibility:hidden;
 }
 
 a.uncoloured li{
