@@ -56,9 +56,10 @@ A:visited{color:black}
 	left:300px;
 	top:50px;
 	border-color:black;
-	border: solid 2px black;
+	border: solid 3px black;
 	width:360px;
 	height:536px;
+	padding-top:15px;
 }
 
 textarea {
@@ -71,6 +72,10 @@ textarea {
 	margin-left:30px;
 }
 
+#contact_form_email{
+	width:296px;
+}
+
 input#send-button{
 	position:absolute;
 	bottom:0;
@@ -78,10 +83,10 @@ input#send-button{
 	width:360px;
 	height:110px;
 	border:0;
-	
+	background-position: 0 -110px;
 }
 input#send-button:hover{
-	background-position: 0 -110px;
+		background-position: 0 0px;
 }
 /**MENU**/
 nav{
@@ -183,7 +188,7 @@ footer p{
 	padding-left:18px;
 	line-height:8px;
 	font-size:10px;
-	margin-right:20px;
+	margin-right:1px;
 }
 #griffe{
 	float:right;

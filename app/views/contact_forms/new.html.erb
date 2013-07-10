@@ -2,11 +2,11 @@
 <%= form_for @contact_form do |f| %>
 
 <div class="field_margined field">
-	message<br />
-	<%= f.text_area :message %><br /><br><br>
+	<p>message</p>
+	<%= f.text_area :message %><br /><br>
 </div>
 <div class="field_margined field">
-	<%= f.label :email %></br>
+	<p><%= f.label :email %></p>
 	<%= f.email_field :email, :required => true %>
 	<br /><br><br>
 </div>
